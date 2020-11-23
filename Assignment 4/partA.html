@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part A</title>
+</head>
+<head>
+<script type="text/javascript">
+    function grossPay(hrs)
+{
+    if(hrs <= 40)
+{
+    return (hrs * 15);
+}
+    else
+{
+    return ( (40*15) + ( (hrs-40) * 1.5 * 15 ) );
+}
+}
+    function process()
+{
+    var arr = [];
+    var i = 1;
+    while(true)
+{
+    var val = prompt("Please input the number of hours worked by Employee #" + (i) + ": ", 0);
+    val = parseInt(val);
+    if(val == -1)
+    break;
+    arr.push(val);  
+    i++;
+}     
+    document.write("<table border=1 align=\"center\">");       
+    document.write("<tr>");
+    document.write("<td> Employee # </td>");
+    document.write("<td> Hours Worked </td>");
+    document.write("<td> Gross Pay(in $) </td>");
+    document.write("</tr>");
+
+    for(i=0; i<arr.length; i++)
+{
+    document.write("<tr>");
+    document.write("<td>" + (i+1) + "</td>");
+    document.write("<td>" + arr[i] + "</td>");
+    document.write("<td>" + grossPay(arr[i]).toFixed(2) + "</td>");
+    document.write("</tr>");
+}  
+    document.write("</table>");
+}
+</script>
+</head>
+<body onload="process()">
+</body>
+</html>
